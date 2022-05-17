@@ -12,5 +12,14 @@ app.get('/greeting', (req, res)=>{
 // Give the greeting route a param /:name
 
 app.get('/greeting/:name', (req, res)=>{
-    res.send("What's up, <name>")
+    console.log(req.params.name)
+    // res.send("What's up" + " " + req.params.name)
+    
+    res.send(`what's up ${req.params.name}`)
 })
+app.get('/tip/:total/:tipPercentage', (req, res)=>{
+    console.log(req.params.total * (req.params.tipPercentage * .01))
+ 
+     res.send(`${req.params.total * (req.params.tipPercentage * .01)}`)
+})
+   
